@@ -35,7 +35,7 @@ class TasksScreen extends ConsumerWidget {
                       ),
                     ),
                     subtitle: task.description != null ? Text(task.description!) : null,
-                    trailing: Checkbox(
+                    trailing: Checkbox.adaptive(
                       value: task.isCompleted,
                       onChanged: (val) {
                         // TODO: Toggle task completion
@@ -47,7 +47,7 @@ class TasksScreen extends ConsumerWidget {
             },
           );
         },
-        loading: () => const Center(child: CircularProgressIndicator()),
+        loading: () => const Center(child: CircularProgressIndicator.adaptive()),
         error: (err, stack) => Center(child: Text('Error: $err')),
       ),
       floatingActionButton: FloatingActionButton(

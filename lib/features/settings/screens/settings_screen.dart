@@ -27,7 +27,7 @@ class SettingsScreen extends ConsumerWidget {
                 const Divider(),
                 LifeOsActionRow(
                   title: 'Notifications',
-                  action: Switch(
+                  action: Switch.adaptive(
                     value: true,
                     onChanged: (val) {},
                   ),

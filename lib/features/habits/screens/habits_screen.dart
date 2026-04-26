@@ -30,7 +30,7 @@ class HabitsScreen extends ConsumerWidget {
                   child: ListTile(
                     title: Text(habit.name),
                     subtitle: Text(habit.frequency),
-                    trailing: Checkbox(
+                    trailing: Checkbox.adaptive(
                       value: false, // TODO: bind to habit log
                       onChanged: (val) {},
                     ),
@@ -40,7 +40,7 @@ class HabitsScreen extends ConsumerWidget {
             },
           );
         },
-        loading: () => const Center(child: CircularProgressIndicator()),
+        loading: () => const Center(child: CircularProgressIndicator.adaptive()),
         error: (err, stack) => Center(child: Text('Error: $err')),
       ),
       floatingActionButton: FloatingActionButton(
