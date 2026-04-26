@@ -1,6 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'database.dart';
-import 'reminder_repository.dart';
 
 final taskRepositoryProvider = Provider<TaskRepository>((ref) {
   final db = ref.watch(databaseProvider);

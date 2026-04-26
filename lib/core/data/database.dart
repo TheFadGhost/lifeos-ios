@@ -3,9 +3,14 @@ import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'tables.dart';
 
 part 'database.g.dart';
+
+final databaseProvider = Provider<LifeOsDatabase>((ref) {
+  return LifeOsDatabase();
+});
 
 @DriftDatabase(tables: [
   Settings,

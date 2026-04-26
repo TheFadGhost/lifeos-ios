@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:drift/drift.dart';
 import 'database.dart';
-import 'reminder_repository.dart';
 
 final habitRepositoryProvider = Provider<HabitRepository>((ref) {
   final db = ref.watch(databaseProvider);

@@ -7,10 +7,6 @@ final reminderRepositoryProvider = Provider<ReminderRepository>((ref) {
   return ReminderRepository(db);
 });
 
-final databaseProvider = Provider<LifeOsDatabase>((ref) {
-  return LifeOsDatabase();
-});
-
 class ReminderRepository {
   final LifeOsDatabase _db;
 
