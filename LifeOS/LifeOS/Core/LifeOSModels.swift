@@ -15,29 +15,29 @@ enum LifeRoute: String, CaseIterable, Codable, Identifiable {
 
     var label: String {
         switch self {
-        case .dashboard: "Home"
-        case .habits: "Habits"
-        case .tasks: "Tasks"
-        case .calendar: "Calendar"
-        case .expenses: "Money"
-        case .fitness: "Fitness"
-        case .journal: "Level Up"
-        case .notes: "Notes"
-        case .settings: "Settings"
+        case .dashboard: return "Home"
+        case .habits: return "Habits"
+        case .tasks: return "Tasks"
+        case .calendar: return "Calendar"
+        case .expenses: return "Money"
+        case .fitness: return "Fitness"
+        case .journal: return "Level Up"
+        case .notes: return "Notes"
+        case .settings: return "Settings"
         }
     }
 
     var systemImage: String {
         switch self {
-        case .dashboard: "square.grid.2x2.fill"
-        case .habits: "checkmark.circle.fill"
-        case .tasks: "checklist"
-        case .calendar: "calendar"
-        case .expenses: "creditcard.fill"
-        case .fitness: "figure.strengthtraining.traditional"
-        case .journal: "sparkles"
-        case .notes: "square.and.pencil"
-        case .settings: "gearshape.fill"
+        case .dashboard: return "square.grid.2x2.fill"
+        case .habits: return "checkmark.circle.fill"
+        case .tasks: return "checklist"
+        case .calendar: return "calendar"
+        case .expenses: return "creditcard.fill"
+        case .fitness: return "figure.strengthtraining.traditional"
+        case .journal: return "sparkles"
+        case .notes: return "square.and.pencil"
+        case .settings: return "gearshape.fill"
         }
     }
 
@@ -63,9 +63,9 @@ enum TaskStatus: String, CaseIterable, Codable, Identifiable {
 
     var label: String {
         switch self {
-        case .notStarted: "Not started"
-        case .inProgress: "In progress"
-        case .done: "Done"
+        case .notStarted: return "Not started"
+        case .inProgress: return "In progress"
+        case .done: return "Done"
         }
     }
 }
@@ -91,10 +91,10 @@ enum ReadingStatus: String, CaseIterable, Codable, Identifiable {
 
     var label: String {
         switch self {
-        case .saved: "Saved"
-        case .inProgress: "In progress"
-        case .completed: "Completed"
-        case .archived: "Archived"
+        case .saved: return "Saved"
+        case .inProgress: return "In progress"
+        case .completed: return "Completed"
+        case .archived: return "Archived"
         }
     }
 }
@@ -146,35 +146,35 @@ enum ThemePreference: String, CaseIterable, Codable, Identifiable {
 
     var label: String {
         switch self {
-        case .system: "System"
-        case .light: "Light"
-        case .dark: "Dark"
-        case .midnight: "Midnight"
-        case .forest: "Forest"
-        case .sunrise: "Sunrise"
-        case .samurai: "Samurai"
-        case .pixel: "8-bit Console"
-        case .sakura: "Sakura"
-        case .glass: "Adaptive Glass"
-        case .neumorphic: "Dark Neumorphism"
-        case .glassmorphism: "Glassmorphism"
-        case .rainy: "Rainy Focus"
-        case .lofi: "Lofi Girl"
-        case .anime: "Anime Cyberpunk"
-        case .terminal: "Terminal"
-        case .vaporwave: "Vaporwave"
-        case .coffee: "Coffee Shop"
-        case .ocean: "Deep Ocean"
-        case .newspaper: "Newspaper"
-        case .candy: "Candy"
-        case .galaxy: "Galaxy"
-        case .autumn: "Autumn"
-        case .snow: "Arctic Snow"
-        case .memphis: "90s Memphis"
-        case .neonCity: "Neon City"
-        case .sepia: "Burnt Vintage"
-        case .amoled: "AMOLED Black"
-        case .stainedGlass: "Stained Glass"
+        case .system: return "System"
+        case .light: return "Light"
+        case .dark: return "Dark"
+        case .midnight: return "Midnight"
+        case .forest: return "Forest"
+        case .sunrise: return "Sunrise"
+        case .samurai: return "Samurai"
+        case .pixel: return "8-bit Console"
+        case .sakura: return "Sakura"
+        case .glass: return "Adaptive Glass"
+        case .neumorphic: return "Dark Neumorphism"
+        case .glassmorphism: return "Glassmorphism"
+        case .rainy: return "Rainy Focus"
+        case .lofi: return "Lofi Girl"
+        case .anime: return "Anime Cyberpunk"
+        case .terminal: return "Terminal"
+        case .vaporwave: return "Vaporwave"
+        case .coffee: return "Coffee Shop"
+        case .ocean: return "Deep Ocean"
+        case .newspaper: return "Newspaper"
+        case .candy: return "Candy"
+        case .galaxy: return "Galaxy"
+        case .autumn: return "Autumn"
+        case .snow: return "Arctic Snow"
+        case .memphis: return "90s Memphis"
+        case .neonCity: return "Neon City"
+        case .sepia: return "Burnt Vintage"
+        case .amoled: return "AMOLED Black"
+        case .stainedGlass: return "Stained Glass"
         }
     }
 }

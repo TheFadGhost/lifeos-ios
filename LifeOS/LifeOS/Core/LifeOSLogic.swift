@@ -10,10 +10,10 @@ enum LifeMetrics {
     static func greeting(forHour hour: Int) -> String {
         let safeHour = min(max(hour, 0), 23)
         switch safeHour {
-        case 5...10: "Good morning"
-        case 11...16: "Good afternoon"
-        case 17...20: "Good evening"
-        default: "Time to wind down"
+        case 5...10: return "Good morning"
+        case 11...16: return "Good afternoon"
+        case 17...20: return "Good evening"
+        default: return "Time to wind down"
         }
     }
 
@@ -125,10 +125,10 @@ enum PlanUrgency: Int, Codable {
 
     var label: String {
         switch self {
-        case .overdue: "Overdue"
-        case .today: "Today"
-        case .upcoming: "Upcoming"
-        case .optional: "Optional"
+        case .overdue: return "Overdue"
+        case .today: return "Today"
+        case .upcoming: return "Upcoming"
+        case .optional: return "Optional"
         }
     }
 }
@@ -289,42 +289,42 @@ enum QuickCaptureParser {
 
     private static func action(for token: String) -> QuickCaptureAction? {
         switch token.lowercased() {
-        case "task", "todo": .task
-        case "event", "calendar": .event
-        case "journal", "note", "reflect": .journal
-        case "read", "reading", "book", "article": .reading
-        case "habit": .habit
-        case "focus", "timer": .focus
-        default: nil
+        case "task", "todo": return .task
+        case "event", "calendar": return .event
+        case "journal", "note", "reflect": return .journal
+        case "read", "reading", "book", "article": return .reading
+        case "habit": return .habit
+        case "focus", "timer": return .focus
+        default: return nil
         }
     }
 
     private static func recurrence(for token: String) -> RecurrenceRule? {
         switch token.lowercased() {
-        case "daily", "everyday": .daily
-        case "weekly": .weekly
-        case "monthly": .monthly
-        default: nil
+        case "daily", "everyday": return .daily
+        case "weekly": return .weekly
+        case "monthly": return .monthly
+        default: return nil
         }
     }
 
     private static func friendlyDate(for token: String, today: Date, calendar: Calendar) -> Date? {
         switch token.lowercased() {
         case "today":
-            calendar.startOfDay(for: today)
+            return calendar.startOfDay(for: today)
         case "tomorrow":
-            calendar.startOfDay(for: today).addingDays(1, calendar: calendar)
+            return calendar.startOfDay(for: today).addingDays(1, calendar: calendar)
         default:
-            DateFormatter.lifeOSDay.date(from: token)
+            return DateFormatter.lifeOSDay.date(from: token)
         }
     }
 
     private static func occurrenceDates(firstDate: Date, recurrence: RecurrenceRule, calendar: Calendar) -> [Date] {
         switch recurrence {
-        case .none: [calendar.startOfDay(for: firstDate)]
-        case .daily: (0..<7).map { firstDate.addingDays($0, calendar: calendar) }
-        case .weekly: (0..<4).map { firstDate.addingWeeks($0, calendar: calendar) }
-        case .monthly: (0..<4).map { firstDate.addingMonths($0, calendar: calendar) }
+        case .none: return [calendar.startOfDay(for: firstDate)]
+        case .daily: return (0..<7).map { firstDate.addingDays($0, calendar: calendar) }
+        case .weekly: return (0..<4).map { firstDate.addingWeeks($0, calendar: calendar) }
+        case .monthly: return (0..<4).map { firstDate.addingMonths($0, calendar: calendar) }
         }
     }
 }
@@ -338,9 +338,9 @@ enum ReviewWindow: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .day: "Daily review"
-        case .week: "Weekly review"
-        case .month: "Monthly review"
+        case .day: return "Daily review"
+        case .week: return "Weekly review"
+        case .month: return "Monthly review"
         }
     }
 }
@@ -431,9 +431,9 @@ enum ReviewAnalytics {
 
     private static func expectedHabitLogScale(for window: ReviewWindow) -> Double {
         switch window {
-        case .day: 4
-        case .week: 21
-        case .month: 90
+        case .day: return 4
+        case .week: return 21
+        case .month: return 90
         }
     }
 }
@@ -693,10 +693,10 @@ private extension String {
 private extension TaskPriority {
     var sortRank: Int {
         switch self {
-        case .low: 0
-        case .medium: 1
-        case .high: 2
-        case .urgent: 3
+        case .low: return 0
+        case .medium: return 1
+        case .high: return 2
+        case .urgent: return 3
         }
     }
 }
