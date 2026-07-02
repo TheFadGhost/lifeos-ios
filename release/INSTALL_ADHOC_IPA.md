@@ -2,6 +2,8 @@
 
 This is the direct `.ipa` path. The tester does not need TestFlight, but the app must be signed for their exact iPhone.
 
+This is not the free route. For a free MacBook + iPhone install, use [FREE_XCODE_IPHONE_INSTALL.md](FREE_XCODE_IPHONE_INSTALL.md). Apple's free Xcode Personal Team signing needs a weekly refresh and cannot produce a forever-signed `.ipa`.
+
 ## What You Need
 
 1. Apple Developer Program membership.
@@ -31,7 +33,6 @@ From this repo on a Mac:
 
 ```bash
 brew install xcodegen
-cd ios
 TEAM_ID=YOURTEAMID \
 PROFILE_NAME="LifeOS Ad Hoc" \
 BUNDLE_ID=app.lifeos.ios \
@@ -41,7 +42,7 @@ BUNDLE_ID=app.lifeos.ios \
 The output is:
 
 ```text
-ios/build/export/LifeOS.ipa
+build/export/LifeOS.ipa
 ```
 
 ## Install Option A: Mac Cable Install

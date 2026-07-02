@@ -24,9 +24,11 @@ $required = @(
     "LifeOS/LifeOSTests/LifeOSLogicTests.swift",
     "LifeOS/LifeOSTests/LifeOSStoreTests.swift",
     "release/INSTALL_ADHOC_IPA.md",
+    "release/FREE_XCODE_IPHONE_INSTALL.md",
     "release/ExportOptions-AdHoc.plist",
     "release/ota-manifest-template.plist",
-    "scripts/build-adhoc-ipa.sh"
+    "scripts/build-adhoc-ipa.sh",
+    "scripts/open-lifeos-in-xcode.command"
 )
 
 foreach ($path in $required) {

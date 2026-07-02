@@ -159,7 +159,11 @@ struct FloatingNavBar: View {
                         }
                         .frame(width: 70, height: 54)
                         .foregroundStyle(selectedRoute == route ? tokens.backgroundTop : tokens.secondaryText)
-                        .background(selectedRoute == route ? tokens.accent : Color.clear)
+                        .background(
+                            selectedRoute == route
+                                ? tokens.accent.opacity(0.92)
+                                : tokens.elevatedSurface.opacity(0.12)
+                        )
                         .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
                     }
                     .buttonStyle(.plain)
@@ -167,12 +171,18 @@ struct FloatingNavBar: View {
             }
             .padding(8)
         }
-        .background(tokens.surface.opacity(0.94))
+        .background {
+            RoundedRectangle(cornerRadius: 26, style: .continuous)
+                .fill(.ultraThinMaterial)
+            RoundedRectangle(cornerRadius: 26, style: .continuous)
+                .fill(tokens.surface.opacity(0.46))
+        }
         .clipShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: 26, style: .continuous)
                 .stroke(tokens.stroke, lineWidth: 1)
         )
+        .shadow(color: Color.black.opacity(0.16), radius: 18, x: 0, y: 10)
         .padding(.horizontal, 12)
         .padding(.bottom, 8)
     }

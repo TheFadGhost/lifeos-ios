@@ -10,7 +10,14 @@ LifeOS iOS is a native SwiftUI port of the offline Android LifeOS app. It keeps 
 - Local notification scheduling for reminders.
 - Local JSON/CSV export.
 - Theme presets matching the Android LifeOS theme names.
-- Ad hoc `.ipa` signing/export scripts and install instructions.
+- Free Xcode/iPhone install instructions for testers.
+- Optional ad hoc `.ipa` signing/export scripts for paid Apple Developer accounts.
+
+## Free Install On Your Friend's iPhone
+
+See [release/FREE_XCODE_IPHONE_INSTALL.md](release/FREE_XCODE_IPHONE_INSTALL.md).
+
+This path uses free tools only: Xcode, a free Apple Account, Homebrew, and XcodeGen. Apple free provisioning profiles expire after 7 days, so the app can be used for free indefinitely by reconnecting the iPhone to the MacBook and pressing **Run** in Xcode once a week. Do not delete the app when refreshing; installing over the same bundle keeps the local LifeOS data.
 
 ## Build On macOS
 
@@ -18,8 +25,6 @@ Requirements:
 
 - macOS with Xcode installed.
 - XcodeGen: `brew install xcodegen`.
-- Apple Developer account with an iOS Distribution certificate.
-- Ad hoc provisioning profile that includes the tester iPhone UDID.
 
 ```bash
 cd LifeOS
@@ -27,9 +32,11 @@ xcodegen generate
 xcodebuild test -scheme LifeOS -destination 'platform=iOS Simulator,name=iPhone 16'
 ```
 
-## Create A Direct Install `.ipa`
+## Create A Direct Install `.ipa` With Paid Ad Hoc Signing
 
 See [release/INSTALL_ADHOC_IPA.md](release/INSTALL_ADHOC_IPA.md).
+
+This is not the free path. Apple ad hoc `.ipa` installs require an Apple Developer Program membership, an iOS Distribution certificate, and a provisioning profile containing the tester iPhone UDID.
 
 Short version:
 
@@ -42,7 +49,7 @@ BUNDLE_ID=app.lifeos.ios \
 
 The signed `.ipa` is written to `build/export/LifeOS.ipa`.
 
-## Direct Install Without TestFlight
+## Direct Install Without TestFlight, But Not Without Signing
 
 Your friend does not need TestFlight, but their iPhone must be registered in your Apple Developer account before signing. Install options are:
 
