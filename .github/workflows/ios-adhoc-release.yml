@@ -2,9 +2,6 @@ name: iOS Ad Hoc Release
 
 on:
   workflow_dispatch:
-  push:
-    tags:
-      - "v*-ios"
 
 jobs:
   build:
