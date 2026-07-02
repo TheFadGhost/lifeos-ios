@@ -266,8 +266,8 @@ enum QuickCaptureParser {
             tokens.removeFirst()
         }
 
-        let recurrence = tokens.compactMap(recurrence(for:)).first ?? .none
-        tokens.removeAll { recurrence(for: $0) != nil }
+        let recurrenceRule = tokens.compactMap(Self.recurrence(for:)).first ?? .none
+        tokens.removeAll { Self.recurrence(for: $0) != nil }
 
         let dateToken = tokens.first { friendlyDate(for: $0, today: today, calendar: calendar) != nil }
         let date = dateToken.flatMap { friendlyDate(for: $0, today: today, calendar: calendar) } ?? calendar.startOfDay(for: today)
@@ -282,8 +282,8 @@ enum QuickCaptureParser {
             action: action,
             title: title,
             date: date,
-            recurrence: recurrence,
-            occurrenceDates: occurrenceDates(firstDate: date, recurrence: recurrence, calendar: calendar)
+            recurrence: recurrenceRule,
+            occurrenceDates: occurrenceDates(firstDate: date, recurrence: recurrenceRule, calendar: calendar)
         )
     }
 
